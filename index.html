@@ -9,34 +9,86 @@
 :root{--main:#d35400;--bg:#fff9f2;--text:#333;--dark:#2c3e50;--yellow:#f1c40f}
 *{box-sizing:border-box;margin:0;padding:0;font-family:'Vazirmatn', sans-serif}
 body{background:var(--bg);color:var(--text);line-height:1.8}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.container{width:min(1200px, 94%);margin-inline:auto}
+
+/* هدر */
 header{background:#fff;box-shadow:0 4px 15px rgba(0,0,0,0.05);position:sticky;top:0;z-index:100}
-.nav{display:flex;justify-content:space-between;align-items:center;padding:15px 5%;max-width:1200px;margin:auto}
-.logo{font-size:24px;font-weight:900;color:var(--main);font-style:italic}
-.links a{margin-left:20px;color:var(--dark);font-weight:700;text-decoration:none;transition:0.3s}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:15px 0}
+.logo{font-size:26px;font-weight:900;color:var(--main);font-style:italic}
+.links a{margin-left:25px;color:var(--dark);font-weight:700;font-size:15px;transition:0.3s}
 .links a:hover{color:var(--main)}
-.btn{background:var(--main);color:#fff;padding:10px 20px;border-radius:30px;text-decoration:none;font-weight:700;transition:0.3s;display:inline-block}
-.btn:hover{background:#b34700;transform:translateY(-2px)}
+.btn{background:var(--main);color:#fff;padding:10px 25px;border-radius:30px;font-weight:700;transition:0.3s;display:inline-block;border:none;cursor:pointer;font-size:14px}
+.btn:hover{background:#b34700;transform:translateY(-2px);box-shadow:0 5px 15px rgba(211,84,0,0.3)}
+
+/* بنر اصلی */
 .hero{background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') center/cover; height:60vh; display:flex; align-items:center; justify-content:center; text-align:center; color:#fff}
 .hero h1{font-size:45px;margin-bottom:15px;text-shadow:2px 2px 10px #000}
 .hero p{font-size:20px;margin-bottom:25px;text-shadow:1px 1px 5px #000}
-.section{padding:50px 5%;max-width:1200px;margin:auto}
-.section-title{text-align:center;font-size:28px;color:var(--dark);margin-bottom:40px;position:relative}
-.section-title::after{content:'';display:block;width:60px;height:3px;background:var(--main);margin:10px auto 0;border-radius:2px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:30px}
-.card{background:#fff;border-radius:15px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.05);transition:0.3s}
-.card:hover{transform:translateY(-10px);box-shadow:0 15px 40px rgba(211,84,0,0.15)}
-.card img{width:100%;height:220px;object-fit:cover}
-.card-info{padding:20px;text-align:center}
-.card-info h3{font-size:18px;margin-bottom:10px;color:var(--dark)}
-.card-info p{color:#777;font-size:14px;margin-bottom:15px}
-.price{font-weight:900;color:var(--main);font-size:18px}
-footer{background:var(--dark);color:#fff;text-align:center;padding:30px;margin-top:50px}
+
+/* بخش‌ها و عناوین */
+.section{padding:60px 0;}
+.section-title{text-align:center;font-size:26px;font-weight:900;color:var(--dark);margin-bottom:40px;position:relative}
+.section-title::after{content:'';display:block;width:60px;height:4px;background:var(--main);margin:10px auto 0;border-radius:2px}
+
+/* استایل دقیقا مثل رادیو خان (کارت های محصولات) */
+.products-grid{display:grid;grid-template-columns:repeat(4, 1fr);gap:20px}
+.product-card{background:#fff;border:1px solid #eaeaea;border-radius:12px;overflow:hidden;position:relative;transition:0.3s;display:flex;flex-direction:column}
+.product-card:hover{box-shadow:0 15px 40px rgba(211,84,0,0.15);transform:translateY(-8px)}
+.product-img{height:200px;padding:15px;display:flex;align-items:center;justify-content:center;background:#fff}
+.product-img img{width:100%;height:100%;object-fit:cover;border-radius:8px;transition:0.3s}
+.product-card:hover .product-img img{transform:scale(1.05)}
+.product-info{padding:15px;border-top:1px solid #eee;text-align:center;flex-grow:1;display:flex;flex-direction:column;justify-content:space-between}
+.product-title{font-size:15px;font-weight:700;color:var(--dark);margin-bottom:5px}
+.product-desc{font-size:12px;color:#777;margin-bottom:15px;line-height:1.6}
+.product-footer{display:flex;justify-content:space-between;align-items:center;margin-top:auto}
+.price{font-size:14px;font-weight:900;color:var(--dark)}
+.btn-order{background:var(--main);color:#fff;width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:0.3s;border:none;cursor:pointer;font-size:16px;box-shadow:0 4px 10px rgba(211,84,0,0.3)}
+.btn-order:hover{background:#b34700;transform:scale(1.1)}
+
+/* بخش چرا ما */
+.features-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:25px}
+.feature-card{background:#fff;padding:30px;text-align:center;border-radius:15px;box-shadow:0 10px 30px rgba(0,0,0,0.05);border:1px solid #eaeaea}
+.feature-card h3{font-size:36px;margin-bottom:10px}
+.feature-card p{font-size:14px;color:#666}
+
+/* بخش نظرات */
+.reviews-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:25px}
+.review-card{background:#fff;padding:25px;border-radius:15px;box-shadow:0 10px 30px rgba(0,0,0,0.05)}
+.review-card p{font-style:italic;color:#555;font-size:14px}
+.stars{margin-top:15px;color:var(--yellow);font-size:18px}
+.reviewer{margin-top:10px;color:var(--dark);font-weight:700;font-size:14px}
+
+/* بخش تماس */
+.contact-card{background:#fff;padding:40px;text-align:center;border-radius:15px;box-shadow:0 10px 30px rgba(0,0,0,0.05);max-width:600px;margin:auto}
+
+/* فوتر */
+footer{background:var(--dark);color:#fff;text-align:center;padding:30px;margin-top:50px;font-size:14px}
+
+/* ریسپانسیو (برای موبایل) */
+@media(max-width:900px){
+  .products-grid{grid-template-columns:repeat(3, 1fr)}
+  .features-grid, .reviews-grid{grid-template-columns:1fr 1fr}
+  .hero h1{font-size:35px}
+}
+@media(max-width:650px){
+  .nav{flex-direction:column;gap:15px}
+  .links a{margin:0 10px}
+  .products-grid{grid-template-columns:repeat(2, 1fr);gap:10px}
+  .product-img{height:150px;padding:10px}
+  .product-title{font-size:13px}
+  .product-desc{font-size:11px;margin-bottom:10px}
+  .btn-order{width:32px;height:32px;font-size:14px}
+  .price{font-size:12px}
+  .features-grid, .reviews-grid{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
 
 <header>
-<div class="nav">
+<div class="container nav">
 <div class="logo">منظریه</div>
 <div class="links">
 <a href="#">صفحه اصلی</a>
@@ -51,36 +103,56 @@ footer{background:var(--dark);color:#fff;text-align:center;padding:30px;margin-t
 <div>
 <h1>طعم اصیل، تازگی واقعی</h1>
 <p>مجموعه رستوران و نانوایی منظریه، آماده پذیرایی از شما</p>
-<a href="#" class="btn" style="padding:15px 35px;font-size:18px;">مشاهده منو و سفارش</a>
+<a href="#restaurant-menu" class="btn" style="padding:15px 35px;font-size:18px;">مشاهده منو و سفارش</a>
 </div>
 </div>
 
 <!-- بخش محصولات رستوران -->
-<div class="section">
+<div class="section container" id="restaurant-menu">
 <h2 class="section-title">محصولات پرفروش رستوران</h2>
-<div class="grid">
-<div class="card">
-<img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="برگر">
-<div class="card-info">
-<h3>برگر ویژه منظریه</h3>
-<p>گوشت خالص، پنیر چدار و سس مخصوص</p>
+<div class="products-grid">
+<div class="product-card">
+<div class="product-img"><img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="برگر"></div>
+<div class="product-info">
+<h3 class="product-title">برگر ویژه منظریه</h3>
+<p class="product-desc">گوشت خالص، پنیر چدار و سس مخصوص</p>
+<div class="product-footer">
 <div class="price">۱۸۵,۰۰۰ تومان</div>
+<button class="btn-order">🛒</button>
 </div>
 </div>
-<div class="card">
-<img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="جوجه کباب">
-<div class="card-info">
-<h3>جوجه کباب زعفرانی</h3>
-<p>سینه مرغ تازه با طعم زعفران اصیل</p>
+</div>
+<div class="product-card">
+<div class="product-img"><img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="جوجه کباب"></div>
+<div class="product-info">
+<h3 class="product-title">جوجه کباب زعفرانی</h3>
+<p class="product-desc">سینه مرغ تازه با طعم زعفران اصیل</p>
+<div class="product-footer">
 <div class="price">۲۴۰,۰۰۰ تومان</div>
+<button class="btn-order">🛒</button>
 </div>
 </div>
-<div class="card">
-<img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="پیتزا">
-<div class="card-info">
-<h3>پیتزا پپرونی</h3>
-<p>خمیر تازه، پپرونی و پنیر موزارلا</p>
+</div>
+<div class="product-card">
+<div class="product-img"><img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="پیتزا"></div>
+<div class="product-info">
+<h3 class="product-title">پیتزا پپرونی</h3>
+<p class="product-desc">خمیر تازه، پپرونی و پنیر موزارلا</p>
+<div class="product-footer">
 <div class="price">۲۱۰,۰۰۰ تومان</div>
+<button class="btn-order">🛒</button>
+</div>
+</div>
+</div>
+<div class="product-card">
+<div class="product-img"><img src="https://images.unsplash.com/photo-1544025162-8111f4e17926?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="کباب کوبیده"></div>
+<div class="product-info">
+<h3 class="product-title">کباب کوبیده</h3>
+<p class="product-desc">گوشت گوسفندی و گاوی مخلوط با ادویه</p>
+<div class="product-footer">
+<div class="price">۲۲۰,۰۰۰ تومان</div>
+<button class="btn-order">🛒</button>
+</div>
 </div>
 </div>
 </div>
@@ -88,30 +160,52 @@ footer{background:var(--dark);color:#fff;text-align:center;padding:30px;margin-t
 
 <!-- بخش محصولات نانوایی -->
 <div class="section" style="background:#fff;">
+<div class="container">
 <h2 class="section-title">محصولات تازه نانوایی</h2>
-<div class="grid">
-<div class="card">
-<img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="نان سنگک">
-<div class="card-info">
-<h3>نان سنگک کنجدی</h3>
-<p>پخت روزانه با آرد درجه یک</p>
+<div class="products-grid">
+<div class="product-card">
+<div class="product-img"><img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="نان سنگک"></div>
+<div class="product-info">
+<h3 class="product-title">نان سنگک کنجدی</h3>
+<p class="product-desc">پخت روزانه با آرد درجه یک</p>
+<div class="product-footer">
 <div class="price">۱۵,۰۰۰ تومان</div>
+<button class="btn-order">🛒</button>
 </div>
 </div>
-<div class="card">
-<img src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="نان بربری">
-<div class="card-info">
-<h3>نان بربری تازه</h3>
-<p>با مغز پنیری و کنجد فراوان</p>
+</div>
+<div class="product-card">
+<div class="product-img"><img src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="نان بربری"></div>
+<div class="product-info">
+<h3 class="product-title">نان بربری تازه</h3>
+<p class="product-desc">با مغز پنیری و کنجد فراوان</p>
+<div class="product-footer">
 <div class="price">۱۲,۰۰۰ تومان</div>
+<button class="btn-order">🛒</button>
 </div>
 </div>
-<div class="card">
-<img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="نان تست">
-<div class="card-info">
-<h3>نان تست و شیرمال</h3>
-<p>مناسب برای صبحانه و عصرانه</p>
+</div>
+<div class="product-card">
+<div class="product-img"><img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="نان تست"></div>
+<div class="product-info">
+<h3 class="product-title">نان تست و شیرمال</h3>
+<p class="product-desc">مناسب برای صبحانه و عصرانه</p>
+<div class="product-footer">
 <div class="price">۲۰,۰۰۰ تومان</div>
+<button class="btn-order">🛒</button>
+</div>
+</div>
+</div>
+<div class="product-card">
+<div class="product-img"><img src="https://images.unsplash.com/photo-1598373182133-52452f7691ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="نان لواش"></div>
+<div class="product-info">
+<h3 class="product-title">نان لواش سنتی</h3>
+<p class="product-desc">پخت سنتی و تازه با طعم بی‌نظیر</p>
+<div class="product-footer">
+<div class="price">۸,۰۰۰ تومان</div>
+<button class="btn-order">🛒</button>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -119,59 +213,61 @@ footer{background:var(--dark);color:#fff;text-align:center;padding:30px;margin-t
 
 <!-- بخش چرا ما -->
 <div class="section" style="background:#fff9f2;">
+<div class="container">
 <h2 class="section-title">چرا منظریه را انتخاب کنیم؟</h2>
-<div class="grid">
-<div class="card" style="padding:30px; text-align:center; box-shadow:none; border:1px solid #eaeaea;">
-<h3 style="color:var(--main); font-size:40px; margin-bottom:10px;">👨‍🍳</h3>
-<h3>کیفیت بی‌نظیر</h3>
+<div class="features-grid">
+<div class="feature-card">
+<h3 style="color:var(--main);">👨‍🍳</h3>
+<h3 style="font-size:18px; color:var(--dark);">کیفیت بی‌نظیر</h3>
 <p>استفاده از بهترین و تازه‌ترین مواد اولیه برای پخت غذا و نان</p>
 </div>
-<div class="card" style="padding:30px; text-align:center; box-shadow:none; border:1px solid #eaeaea;">
-<h3 style="color:var(--main); font-size:40px; margin-bottom:10px;">⚡️</h3>
-<h3>ارسال سریع</h3>
+<div class="feature-card">
+<h3 style="color:var(--main);">⚡️</h3>
+<h3 style="font-size:18px; color:var(--dark);">ارسال سریع</h3>
 <p>تحویل سفارشات در کمترین زمان ممکن با پیک اختصاصی</p>
 </div>
-<div class="card" style="padding:30px; text-align:center; box-shadow:none; border:1px solid #eaeaea;">
-<h3 style="color:var(--main); font-size:40px; margin-bottom:10px;">✅</h3>
-<h3>تضمین تازگی</h3>
+<div class="feature-card">
+<h3 style="color:var(--main);">✅</h3>
+<h3 style="font-size:18px; color:var(--dark);">تضمین تازگی</h3>
 <p>نان‌ها روزانه و طبق سفارش شما پخت می‌شوند</p>
+</div>
 </div>
 </div>
 </div>
 
 <!-- بخش نظرات -->
 <div class="section" style="background:#fff;">
+<div class="container">
 <h2 class="section-title">نظرات مشتریان ما</h2>
-<div class="grid">
-<div class="card" style="padding:20px; box-shadow:0 5px 15px rgba(0,0,0,0.05);">
-<p style="font-style:italic; color:#555;">"بهترین برگر تبریز رو اینجا خوردم! گوشت‌ش واقعا عالیه. نون‌های نانوایی‌شون هم همیشه تازه و داغه."</p>
-<div style="margin-top:15px; color:var(--yellow); font-size:20px;">⭐⭐⭐⭐⭐</div>
-<h4 style="margin-top:10px; color:var(--dark);">- رضا احمدی</h4>
+<div class="reviews-grid">
+<div class="review-card">
+<p>"بهترین برگر تبریز رو اینجا خوردم! گوشت‌ش واقعا عالیه. نون‌های نانوایی‌شون هم همیشه تازه و داغه."</p>
+<div class="stars">⭐⭐⭐⭐⭐</div>
+<h4 class="reviewer">- رضا احمدی</h4>
 </div>
-<div class="card" style="padding:20px; box-shadow:0 5px 15px rgba(0,0,0,0.05);">
-<p style="font-style:italic; color:#555;">"سفارش با پیک سریع رسید، غذا کاملا گرم بود. سیستم سفارش آنلاینشون هم خیلی راحته."</p>
-<div style="margin-top:15px; color:var(--yellow); font-size:20px;">⭐⭐⭐⭐⭐</div>
-<h4 style="margin-top:10px; color:var(--dark);">- سارا محمدی</h4>
+<div class="review-card">
+<p>"سفارش با پیک سریع رسید، غذا کاملا گرم بود. سیستم سفارش آنلاینشون هم خیلی راحته."</p>
+<div class="stars">⭐⭐⭐⭐⭐</div>
+<h4 class="reviewer">- سارا محمدی</h4>
 </div>
-<div class="card" style="padding:20px; box-shadow:0 5px 15px rgba(0,0,0,0.05);">
-<p style="font-style:italic; color:#555;">"نان بربری‌های منظریه حرف نداره. مخصوصا وقتی تازه از تنور درمیاد. حتما امتحان کنید!"</p>
-<div style="margin-top:15px; color:var(--yellow); font-size:20px;">⭐⭐⭐⭐⭐</div>
-<h4 style="margin-top:10px; color:var(--dark);">- حسین کریمی</h4>
+<div class="review-card">
+<p>"نان بربری‌های منظریه حرف نداره. مخصوصا وقتی تازه از تنور درمیاد. حتما امتحان کنید!"</p>
+<div class="stars">⭐⭐⭐⭐⭐</div>
+<h4 class="reviewer">- حسین کریمی</h4>
+</div>
 </div>
 </div>
 </div>
 
 <!-- بخش تماس -->
-<div class="section">
+<div class="section container">
 <h2 class="section-title">تماس با ما</h2>
-<div class="grid" style="grid-template-columns: 1fr;">
-<div class="card" style="padding:40px; text-align:center; box-shadow:0 10px 30px rgba(0,0,0,0.05);">
-<h3 style="color:var(--main); font-size:24px; margin-bottom:15px;">📍 آدرس رستوران و نانوایی</h3>
-<p style="font-size:18px; margin-bottom:20px; color:#555;">تبریز، خیابان منظریه، جنب پارک، پلاک ۱۲۳</p>
-<h3 style="color:var(--main); font-size:24px; margin-bottom:15px;">📞 شماره تماس</h3>
-<p style="font-size:22px; font-weight:900; direction:ltr; margin-bottom:20px;">041-33334444</p>
-<a href="#" class="btn" style="padding:15px 40px; font-size:18px;">همین حالا سفارش دهید</a>
-</div>
+<div class="contact-card">
+<h3 style="color:var(--main); font-size:22px; margin-bottom:15px;">📍 آدرس رستوران و نانوایی</h3>
+<p style="font-size:16px; margin-bottom:25px; color:#555;">تبریز، خیابان منظریه، جنب پارک، پلاک ۱۲۳</p>
+<h3 style="color:var(--main); font-size:22px; margin-bottom:15px;">📞 شماره تماس</h3>
+<p style="font-size:20px; font-weight:900; direction:ltr; margin-bottom:25px;">041-33334444</p>
+<a href="#" class="btn" style="padding:15px 40px; font-size:16px;">همین حالا سفارش دهید</a>
 </div>
 </div>
 
